@@ -1,0 +1,11 @@
+
+def main():
+    print(powering(int(input("Enter a num")),int(input("Enter a power"))))
+
+def powering(num,power):
+    result = 1
+    for i in range(power):
+        result*=num
+    return result
+
+main()

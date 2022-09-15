@@ -1,0 +1,21 @@
+Realnumber=5
+Flag=0
+Realnumber=5
+counter=0
+guess=-1
+FLAG=0
+while guess !=Realnumber and counter<3:
+    if counter <2:
+       print(f"You have {3-counter} guesses left")
+    else:
+        print(f"You have {3 - counter} guess left")
+
+    guess=int(input("Enter a mumber"))
+
+    counter+=1
+    if guess==Realnumber:
+        print("YOU WIN!")
+        FLAG=1
+        break
+if FLAG==0:
+    print("YOU LOSE")

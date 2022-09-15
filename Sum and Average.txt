@@ -1,0 +1,9 @@
+n=int(input("Enter number of digits"))
+sum=0
+for _ in range(n):
+
+    x=int(input("Enter the number"))
+    sum+=x
+print(f"The sum is{sum}")
+print(f"The average of the {n} numbers u enter is {sum/n}")
+

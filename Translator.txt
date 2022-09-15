@@ -1,0 +1,12 @@
+def translator(phrase):
+
+    translated=""
+    for letter in phrase:
+        if letter.lower() in "aeiou":
+           translated=translated+"g"
+        else:
+            translated = translated + letter
+
+    return translated
+
+print(translator(input("Enter a statement")))

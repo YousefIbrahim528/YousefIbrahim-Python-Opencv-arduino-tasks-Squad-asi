@@ -1,0 +1,28 @@
+def add(x,y):
+    print(f"the sum of two variables is{x+y}")
+def sub(x,y):
+    print(f"the sub of two variables is{x-y}")
+def mult(x,y):
+    print(f"the mult of two variables is{x*y}")
+def div(x,y):
+    print(f"the Division of two variables is{x / y}")
+
+x=int(input("Enter a number"))
+operator=input("Enter an operator")
+y=int(input("Enter a number"))
+
+if not operator:
+    raise ValueError("Missing Operator")
+else:
+
+  if operator =="+":
+    add(x,y)
+  elif operator =="-":
+    sub(x, y)
+  elif operator =="*":
+    mult(x,y)
+  elif operator =="/":
+    div(x,y)
+
+  else:
+      print("Invalid Operator")

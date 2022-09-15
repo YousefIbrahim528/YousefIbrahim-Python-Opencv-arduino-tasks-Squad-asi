@@ -1,0 +1,20 @@
+class Info:
+    def __init__(self,color,celebrity,book):
+        self.color=color
+        self.celebrity=celebrity
+        self.book=book
+
+    def __str__(self):
+        return f"your favourite color is {self.color} ,Your celebrity cruch is{self.celebrity} and The best book is {self.book}"
+
+def Main():
+    Information=Get_info()
+    print(Information)
+def Get_info():
+   color=input("Enter a color")
+   celebrity=input("Enter a name of a celebrity")
+   book=input("What is ur favourite book")
+   return Info(color,celebrity,book)
+
+Main()
+

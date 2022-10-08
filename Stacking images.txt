@@ -1,0 +1,8 @@
+import cv2 
+import numpy as np
+img= cv2.imread(r"C:\Users\HP\Desktop\cat.jpg")
+hstacked=np.hstack((img,img))
+vstacked=np.vstack((hstacked,hstacked))
+resized=cv2.resize(vstacked,(200,200))
+cv2.imshow("img",resized)
+cv2.waitKey(0)

@@ -1,0 +1,12 @@
+import cv2
+import numpy as np
+img=cv2.imread("cards.jpg")
+
+width,height=250,350
+pts1=np.FLoat32([[],[],[],[]])#### Get the right coordinates from Paint
+pts2=np.Float32([[0,0],[width,0],[height,0],[width,height]])
+matrix=cv2.getPerspectivetransform(pts1,pts2)
+output=cv2.warpPerspective(img,matrix,(width,height))
+
+cv2.imshow("Output",output)
+cv2.waitKey(0)

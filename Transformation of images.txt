@@ -1,0 +1,50 @@
+import cv2
+
+cap = cv2.VideoCapture(0)
+   
+result = cv2.VideoWriter('E:\downloads\Photos', cv2.VideoWriter_fourcc(*'MJPG'),30.0, (int(cap.get(3)),int(cap.get(4))))
+
+currentframe = 0
+
+while True:
+    Bollean,img = cap.read()
+  
+    if Bollean == True: 
+        
+        
+        key = cv2.waitKey(1) & 0xFF
+        cv2.imshow('Video', img)
+        if key == ord('q'):#q letter to quit
+            break
+        if key == ord('o'): #original image
+            cv2.imshow('Video', img)
+
+        
+        if key == ord('p'): #take a picture
+            
+            cv2.imwrite('Frame' + str(currentframe) + '.jpg', img)
+            currentframe += 1
+            print('A photo has been printed')
+            
+
+        if key == ord('g'): #turn the image to grey
+            
+            imggrey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+            cv2.imshow(' GreyVideo', imggrey)    
+        if key == ord('r'):
+
+            rotated=cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
+            cv2.imshow("Rotated",rotated)
+        if key == ord('h'):
+            hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)  
+            cv2.imshow("hsv",hsv)   
+    else:
+        break
+  
+cap.release()
+result.release()
+cv2.destroyAllWindows()
+
+
+
+
